@@ -1,9 +1,17 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-process.loadEnvFile();
-const connectionString  =  process.env.MONGO_URI || ""; 
-//aqui se intenta establcer la conexion con la base de datos mediante el string de conexion que tenemos en el .env
-// si se conecta bien, se muestra un mensaje en consola, si no, se muestra el error
-export const db = mongoose.connect(connectionString)
-  .then(() => console.log("Conectado a MongoDB exitosamente"))
-  .catch((error) => console.error(error));
+// Lee la URI de conexión desde las variables de entorno
+const uri = process.env.MONGO_URI || '';
+const defaultDb = 'velvetroom';
+
+let cached: typeof mongoose | null = (global as any)._mongooseCached || null;
+
+export async function connectDB() {
+  if (cached) return cached;
+  const conn = await mongoose.connect(uri, { dbName: process.env.MONGO_DB || defaultDb });
+  (global as any)._mongooseCached = conn;
+  return (cached = conn);
+}
+
+// Conexión inicial a la base de datos al iniciar la aplicación
+export const db = connectDB();

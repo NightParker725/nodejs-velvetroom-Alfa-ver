@@ -1,0 +1,51 @@
+{
+  "id": "velvet-room-local-env",
+  "name": "Velvet Room Local",
+  "values": [
+    { "key": "baseUrl", "value": "http://localhost:3000", "enabled": true },
+
+    { "key": "adminEmail",  "value": "ada@example.com",    "enabled": true },
+    { "key": "adminPass",   "value": "hashAdmin",          "enabled": true },
+
+    { "key": "sellerEmail", "value": "victor@example.com", "enabled": true },
+    { "key": "sellerPass",  "value": "hashSeller",         "enabled": true },
+
+    { "key": "clientEmail", "value": "alice@example.com",  "enabled": true },
+    { "key": "clientPass",  "value": "hashBuyer",          "enabled": true },
+
+    { "key": "adminToken",  "value": "", "enabled": true },
+    { "key": "sellerToken", "value": "", "enabled": true },
+    { "key": "clientToken", "value": "", "enabled": true },
+
+    { "key": "userId_alicia", "value": "68c5c2089ca156594ac5f98f", "enabled": true },
+    { "key": "userId_victor", "value": "68c5c2159ca156594ac5f995", "enabled": true },
+    { "key": "userId_ada",    "value": "68c5c21f9ca156594ac5f99a", "enabled": true },
+    { "key": "userId_carlos", "value": "68c5c3fc9ca156594ac5fa4b", "enabled": true },
+
+    { "key": "productId_er",        "value": "68c5c25a9ca156594ac5f9b3", "enabled": true },
+    { "key": "productId_link",      "value": "68c5c2649ca156594ac5f9b5", "enabled": true },
+    { "key": "productId_spiderman", "value": "68c5c4209ca156594ac5fc96", "enabled": true },
+
+    { "key": "categoryId_videojuegos", "value": "68c5c22e9ca156594ac5f9a0", "enabled": true },
+    { "key": "categoryId_accesorios",  "value": "68c5c2389ca156594ac5f9a2", "enabled": true },
+    { "key": "categoryId_ropa",        "value": "68c5c2419ca156594ac5f9a7", "enabled": true },
+    { "key": "categoryId_figuras",     "value": "68c5c24e9ca156594ac5f9ac", "enabled": true },
+    { "key": "categoryId_comics",      "value": "68c5c40d9ca156594ac5fbda", "enabled": true },
+
+    { "key": "testUserEmail", "value": "makoto.niijima@velvetroom.com", "enabled": true },
+    { "key": "testUserPass",  "value": "Makoto#2025", "enabled": true },
+    { "key": "testUserId",    "value": "", "enabled": true },
+
+    { "key": "testAdminProdName", "value": "Artbook Persona 5", "enabled": true },
+    { "key": "testAdminProdId",   "value": "", "enabled": true },
+
+    { "key": "testSellerProdName","value": "Sticker pack Zelda", "enabled": true },
+    { "key": "testSellerProdId",  "value": "", "enabled": true },
+
+    { "key": "testCategoryName",        "value": "Artbooks", "enabled": true },
+    { "key": "testCategoryNameUpdated", "value": "Artbooks (actualizada)", "enabled": true },
+    { "key": "testCategoryId",          "value": "", "enabled": true }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_using": "Postman/10.x"
+}

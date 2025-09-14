@@ -5,12 +5,17 @@ import { router as userRouter } from './routes/user.routes';
 import { router as productRouter } from './routes/product.routes';
 import { router as categoryRouter } from './routes/category.routes';
 
+import { createApp } from './app';
+import { connectDB } from './config/connectionDB';
+
 // Carga variables de entorno
 process.loadEnvFile();
 
 // Crea servidor Express
-const app: Express = express();
+const app = createApp();
 const port = Number(process.env.PORT) || 3000;
+
+
 
 // Middlewares globales
 app.use(express.json());
@@ -35,6 +40,6 @@ app.use('/api/products', productRouter);
 app.use('/api/categories', categoryRouter);
 
 // Inicia servidor tras conectar a BD
-db.then(() => {
+connectDB().then(() => {
   app.listen(port, () => console.log(`Server is running on port ${port}`));
 });

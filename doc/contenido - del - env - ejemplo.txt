@@ -1,0 +1,4 @@
+PORT=3000
+MONGO_URI="mongodb+srv://admin:admin@velvetroom.v0y8dyy.mongodb.net/velvetroom?retryWrites=true&w=majority&appName=velvetroomy"
+JWT_SECRET=VelvetRoom_Default_Secret_From_Persona
+JWT_EXPIRES_IN=1d
