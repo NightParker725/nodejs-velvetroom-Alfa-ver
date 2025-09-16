@@ -1,36 +1,41 @@
 {
-  "name": "crud-node",
-  "version": "0.0.1",
-  "description": "Crud example",
-  "main": "src/index.js",
+  "name": "nodejs-velvetroom",
+  "version": "1.0.0",
+  "description": "API VelvetRoom con Node.js, Express, Mongoose y pruebas unitarias/integración",
+  "main": "src/index.ts",
+  "author": "leobusta",
+  "license": "ISC",
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "dev": "nodemon --exec ts-node ./src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config ./tests/jest.config.ts --coverage",
+    "test:watch": "jest --config ./tests/jest.config.ts --watchAll",
+    "test:ci": "jest --config ./tests/jest.config.ts --coverage --runInBand",
+    "it:postman": "newman run ./tests/postman/velvetroom.postman_collection.json -e ./tests/postman/env.local.json --reporters cli,html --reporter-html-export ./tests/postman/report.html"
   },
-  "author": "leobusta",
-  "license": "ISC",
   "dependencies": {
     "bcrypt": "^6.0.0",
-    "cors": "^2.8.5",
     "express": "^5.1.0",
     "express-validator": "^7.2.1",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.18.0",
     "mongoose": "^8.17.0",
-    "serverless-http": "^4.0.0",
-    "vercel": "^48.0.0",
-    "yarn": "^1.22.22",
     "zod": "^4.1.8"
   },
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
-    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/express-validator": "^2.20.33",
+    "@types/jest": "^30.0.0",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.2.0",
+    "@types/supertest": "^2.0.16",
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^10.1.4",
+    "newman": "^6.2.1",
     "nodemon": "^3.1.10",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   }
